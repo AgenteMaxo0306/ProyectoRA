@@ -70,16 +70,12 @@
         <!-- Entidad que se activa al detectar el marcador -->
         <a-entity mindar-image-target="targetIndex: 0">
             
-            <!-- Tu Modelo 3D (con animación de giro agregada) -->
-            <a-gltf-model 
-                src="#modelo3d" 
-                position="0 0 0" 
-                scale="0.6 0.6 0.6" 
-                rotation="0 0 0"
-                animation="property: rotation; to: 0 360 0; loop: true; dur: 8000; easing: linear">
-            </a-gltf-model>
+            <!-- Contenedor animado para el mono (ahora sí girará por completo) -->
+            <a-entity position="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 8000; easing: linear">
+                <a-gltf-model src="#modelo3d" scale="0.6 0.6 0.6" rotation="0 0 0"></a-gltf-model>
+            </a-entity>
             
-            <!-- El cubo/estrella animado flotando encima del modelo (también girando) -->
+            <!-- El cubo/estrella animado flotando encima del modelo -->
             <a-entity position="0 1.2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 4000; easing: linear">
                 <a-box width="0.25" height="0.25" depth="0.25" color="#00ff66" material="emissive: #00ff66; emissiveIntensity: 0.9"></a-box>
             </a-entity>
