@@ -54,7 +54,7 @@
     <!-- Mensaje guía para el usuario -->
     <div id="ui-container">
         <h1>Realidad Aumentada</h1>
-        <p>Apunta con la cámara de tu celular a la imagen para ver el modelo y la estrella.</p>
+        <p>Apunta con la cámara de tu celular a la imagen para ver los modelos en movimiento.</p>
     </div>
 
     <!-- Configuración de la escena WebAR con MindAR -->
@@ -70,7 +70,7 @@
         <!-- Entidad que se activa al detectar el marcador -->
         <a-entity mindar-image-target="targetIndex: 0">
             
-            <!-- Tu Modelo 3D con animación de rotación continua -->
+            <!-- Tu Modelo 3D (con animación de giro agregada) -->
             <a-gltf-model 
                 src="#modelo3d" 
                 position="0 0 0" 
@@ -79,8 +79,8 @@
                 animation="property: rotation; to: 0 360 0; loop: true; dur: 8000; easing: linear">
             </a-gltf-model>
             
-            <!-- La estrella animada flotando encima del modelo -->
-            <a-entity position="0 1.2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 4000">
+            <!-- El cubo/estrella animado flotando encima del modelo (también girando) -->
+            <a-entity position="0 1.2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 4000; easing: linear">
                 <a-box width="0.25" height="0.25" depth="0.25" color="#00ff66" material="emissive: #00ff66; emissiveIntensity: 0.9"></a-box>
             </a-entity>
 
