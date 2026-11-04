@@ -70,8 +70,14 @@
         <!-- Entidad que se activa al detectar el marcador -->
         <a-entity mindar-image-target="targetIndex: 0">
             
-            <!-- Tu Modelo 3D (puedes ajustar escala y rotación si lo necesitas) -->
-            <a-gltf-model src="#modelo3d" position="0 0 0" scale="0.6 0.6 0.6" rotation="0 0 0"></a-gltf-model>
+            <!-- Tu Modelo 3D con animación de rotación continua -->
+            <a-gltf-model 
+                src="#modelo3d" 
+                position="0 0 0" 
+                scale="0.6 0.6 0.6" 
+                rotation="0 0 0"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 8000; easing: linear">
+            </a-gltf-model>
             
             <!-- La estrella animada flotando encima del modelo -->
             <a-entity position="0 1.2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 4000">
